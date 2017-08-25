@@ -44,7 +44,8 @@ class CrossDatabaseTest extends Command
         $houses = $user->houses;
 
         foreach ($houses as $house){
-            $this->comment('Has house '. $house->name);
+            $user = $house->user;
+            $this->comment('Has house '. $house->name . ' belongs to ' . $user->name);
         }
     }
 }

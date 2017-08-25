@@ -6,5 +6,12 @@ use Illuminate\Database\Eloquent\Model;
 
 class House extends Model
 {
-    protected $connection = 'database2';
+    public function getConnectionName()
+    {
+        return 'database2';
+    }
+
+    public function user(){
+        return $this->belongsTo(User::class, 'user_id');
+    }
 }
